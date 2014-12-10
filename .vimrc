@@ -2,7 +2,6 @@
 set nocompatible
 
 set term=xterm-256color
-colorscheme molokai
 " enable syntax highlighting
 syntax enable
 
@@ -128,3 +127,5 @@ if filereadable(expand("~/.vimrc.local"))
   " noremap! jj <ESC>
   source ~/.vimrc.local
 endif
+colorscheme molokai
+Bundle 'Valloric/YouCompleteMe'
