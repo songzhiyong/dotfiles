@@ -49,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 #  Aliases
 # -------------------------------------------------------------------
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='vim'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias zshconfig="mate ~/.zshrc"
@@ -116,6 +117,7 @@ alias installd='adb install app/build/outputs/apk/app-debug.apk'
 alias installr='adb install app/app-release.apk'
 
 alias uninstallapp='adb uninstall com.eyespage.launcher2.app'
+alias debug='./gradlew :app:assembleDebug'
  
 # -------------------------------------------------------------------
 # FUNCTIONS
