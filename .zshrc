@@ -76,7 +76,7 @@ alias gs='git status'
 alias gsb='git status -sb'
 alias gss='git status -s'
 alias gta='git tag -a -m'
-alias glu="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short--author='songzhiyong'"
+alias glu="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short --author='songzhiyong'"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short"
 
 
