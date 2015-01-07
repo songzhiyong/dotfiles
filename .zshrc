@@ -116,7 +116,6 @@ alias cpre='cp app/app-release.apk ~/Desktop/debug-history/app-release`date +%m%
 alias installd='adb install app/build/outputs/apk/app-debug.apk'
 alias installr='adb install app/app-release.apk'
 
-alias uninstallapp='adb uninstall com.eyespage.launcher2.app'
 alias debug='./gradlew :app:assembleDebug'
  
 # -------------------------------------------------------------------
