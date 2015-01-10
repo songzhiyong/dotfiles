@@ -58,7 +58,8 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 # -------------------------------------------------------------------
 # Git aliases
 # -------------------------------------------------------------------
-alias ga='git add -A'
+alias ga='git add -u'
+alias gaa='git add -A'
 alias gb='git branch'
 alias gc='git checkout'
 alias gcb='git checkout -b'
@@ -112,11 +113,7 @@ alias .9='draw9patch'
 
 alias cpde='cp app/build/outputs/apk/app-debug.apk ~/Desktop/debug-history/app-debug`date +%m%d_%H%M%S`.apk'
 alias cpre='cp app/app-release.apk ~/Desktop/debug-history/app-release`date +%m%d_%H%M%S`.apk' 
-
-alias installd='adb install app/build/outputs/apk/app-debug.apk'
-alias installr='adb install app/app-release.apk'
-
-alias debug='./gradlew :app:assembleDebug'
+alias debug='~/dotfiles/debug.sh'
  
 # -------------------------------------------------------------------
 # FUNCTIONS
