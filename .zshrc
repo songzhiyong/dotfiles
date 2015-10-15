@@ -10,6 +10,7 @@ export M3=$M3_HOME/bin
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/platform-tools
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/platform-tools/fastboot
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/tools
+export PATH=${PATH}:/Users/jerome/Soft/android-sdk/build-tools/21.1.1
 export PATH=${PATH}:/Users/jerome/Soft/goagent/local
 export PATH=${PATH}:/usr/local/mysql/bin
 export PATH=${PATH}:$ES_HOME/bin:$M3/bin
@@ -118,6 +119,7 @@ alias debug='~/dotfiles/debug.sh'
 alias debugb='~/dotfiles/debugb.sh'
 alias installr='adb install app/app-release.apk'
 alias cdtest='cd ~/dev/android/test'
+alias grepa='adb logcat|grep '
  
 # -------------------------------------------------------------------
 # FUNCTIONS
