@@ -5,3 +5,5 @@
 #================================================================================
 cp ~/.zshrc ~/dotfiles
 cp ~/.vimrc ~/dotfiles
+cp ~/.gitconfig ~/dotfiles
+cp ~/.gitignore_global ~/dotfiles

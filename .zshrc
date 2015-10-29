@@ -81,7 +81,14 @@ alias gss='git status -s'
 alias gta='git tag -a -m'
 alias glu="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short --author='songzhiyong'"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short"
-
+#git ignore track some file
+alias gignoretrack='git update-index --assume-unchanged'
+#git push tags
+alias gpt='git push --tags'
+###git delete tag###
+# git tag -d 12345 
+# git push origin :refs/tags/12345
+alias gtd='git tag -d'
 
 #
 # -------------------------------------------------------------------
