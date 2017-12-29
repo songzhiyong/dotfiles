@@ -13,8 +13,8 @@
 
 cd ~/dev/android
 MODE="$1"
-ROOT_PATH=`awk -F "=" '/root_path/ {print $2}' config.ini`
-PKG_NAME=`awk -F "=" '/pkg_name/ {print $2}' config.ini`
+ROOT_PATH=`awk -F "=" '/root_path/ {print $2}' config_launcher.ini`
+PKG_NAME=`awk -F "=" '/pkg_name/ {print $2}' config_launcher.ini`
 cd $ROOT_PATH
 if [[ "$MODE" == *b* ]]||[[ "$MODE" == *a* ]]||[[ "$MODE" == ""  ]];then
   rm -rf app/build/outputs/apk/*.apk
@@ -24,7 +24,7 @@ if [[ "$MODE" == *u* ]]||[[ "$MODE" == *a* ]];then
   echo "[Uninstall...]"
   adb uninstall $PKG_NAME
 fi
-sleep 2
+sleep 5
 if [[ "$MODE" == *r* ]];then
   echo "[Upgrade...]"
   adb install -r app/build/outputs/apk/*.apk

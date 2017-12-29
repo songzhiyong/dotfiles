@@ -18,7 +18,8 @@ PKG_NAME=`awk -F "=" '/pkg_name/ {print $2}' config_bubble.ini`
 cd $ROOT_PATH
 if [[ "$MODE" == *b* ]]||[[ "$MODE" == *a* ]]||[[ "$MODE" == ""  ]];then
   rm -rf app/build/outputs/apk/*.apk
-  ./gradlew :app:assembleDebug
+
+  ./gradlew :app:assembleOfficial_siteDebug
 fi
 if [[ "$MODE" == *u* ]]||[[ "$MODE" == *a* ]];then
   echo "[Uninstall...]"
@@ -27,10 +28,10 @@ fi
 sleep 2
 if [[ "$MODE" == *r* ]];then
   echo "[Upgrade...]"
-  adb install -r app/build/outputs/apk/app-official_site-debug.apk
+  adb install -r app/build/outputs/apk/app_official_site_debug.apk
 fi
 if [[ "$MODE" == *i* ]]||[[ "$MODE" == *a* ]];then
   echo "[Install...]"
-  adb install app/build/outputs/apk/app-official_site-debug.apk
+  adb install app/build/outputs/apk/app_official_site_debug.apk
 fi
 echo "[DONE]"
