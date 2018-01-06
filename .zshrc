@@ -2,11 +2,20 @@
 # PATH
 # -------------------------------------------------------------------
 export ZSH=$HOME/.oh-my-zsh
-export ES_HOME=/Users/jerome/dev/elasticsearch/elasticsearch-1.4.0
+export ES_HOME=/Users/jerome/dev/elasticsearch/elasticsearch-6.1.1
 export SCALA_HOME=/usr/local/scala
 export M3_HOME=/usr/local/Cellar/maven/3.2.3/libexec
 export M3=$M3_HOME/bin
-
+export PHANTOMJS_HOME=/Users/jerome/dev/phantomjs/
+export VERTICA_HOME=/opt/vertica
+export JAVA_HOME=$(/usr/libexec/java_home)
+export GOPATH=$HOME/go
+export VERTICA_PATH=$VERTICA_HOME/bin
+export KIBANA_HOME=/Users/jerome/dev/kibana
+export PATH=$PATH:$KIBANA_HOME/bin
+export PATH=$PATH:$VERTICA_PATH
+export PATH=$PATH:$PHANTOMJS_HOME/bin
+export PATH=$PATH:$GOPATH/bin
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/platform-tools
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/platform-tools/fastboot
 export PATH=${PATH}:/Users/jerome/Soft/android-sdk/tools
@@ -17,7 +26,13 @@ export PATH=${PATH}:$ES_HOME/bin:$M3/bin
 export PATH=${PATH}:$HOME/bin:/usr/local/bin
 export PATH=${PATH}:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=${PATH}:$SCALA_HOME/bin
+export PATH=${PATH}:/Users/jerome/git/jadx/build/jadx/bin
+export PATH=${PATH}:/Users/jerome/bin/qiniu-devtools/
 
+
+export MAGICK_HOME="$HOME/bin/ImageMagick-7.0.5"
+export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:"$MAGICK_HOME/lib/"
+export PATH="$MAGICK_HOME/bin:$PATH"
 # -------------------------------------------------------------------
 # Keys
 # -------------------------------------------------------------------
@@ -80,6 +95,7 @@ alias gsb='git status -sb'
 alias gss='git status -s'
 alias gta='git tag -a -m'
 alias glu="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short --author='songzhiyong'"
+alias gluu="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short --author='jerome'"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=short"
 #git ignore track some file
 alias gignoretrack='git update-index --assume-unchanged'
@@ -113,7 +129,9 @@ alias capd='cap deploy'
 # -------------------------------------------------------------------
  
 alias cl='clear'
-alias goagent='goagent-osx.command'
+alias cdtest='cd ~/dev/android/test'
+alias cdsql='cd ~/git/label-SQL'
+alias cdt='cd ~/Desktop'
  
 # -------------------------------------------------------------------
 # Android Debug 
@@ -125,9 +143,9 @@ alias cpre='cp app/app-release.apk ~/Desktop/debug-history/app-release`date +%m%
 alias debug='~/dotfiles/debug.sh'
 alias debugb='~/dotfiles/debugb.sh'
 alias installr='adb install app/app-release.apk'
-alias cdtest='cd ~/dev/android/test'
 alias grepa='adb logcat|grep '
- 
+alias deeplink='adb shell am start -d'
+
 # -------------------------------------------------------------------
 # FUNCTIONS
 # -------------------------------------------------------------------
@@ -141,4 +159,19 @@ function ips() {
      ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
+snap_screen() {
+  if [ $# -eq 0 ]
+  then
+       name="screenshot.png"
+  else
+          name="$1.png"
+  fi
 
+  adb pull /sdcard/$name
+  adb shell rm /sdcard/$name
+  curr_dir=pwd
+  echo "Saved to `pwd`/$name"
+}
+
+export NVM_DIR="/Users/jerome/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
